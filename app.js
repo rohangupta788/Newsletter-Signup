@@ -32,10 +32,10 @@ app.post("/",function(req,res){
     ]
   };
   const jsondata= JSON.stringify(data);
-  const url= "https://us1.api.mailchimp.com/3.0/lists/bc070c0473";
+  const url= "https://us1.api.mailchimp.com/3.0/lists/{listId}";
   const options ={
     method:"POST",
-    auth: "rohan:ea05b1a94ed0aef0b4a7a5151bbde403-us1"
+    auth: "rohan:{apiKey}"
   }
 
   const request= https.request(url,options,function(response){
@@ -64,11 +64,3 @@ app.post("/failure",function(req,res){
 app.listen(process.env.PORT || 3000 ,function(){
   console.log("server is running.");
 });
-
-
-
-// api key
-// ea05b1a94ed0aef0b4a7a5151bbde403-us1
-
-// unique id lists
-// bc070c0473
